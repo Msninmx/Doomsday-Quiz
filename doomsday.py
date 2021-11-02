@@ -162,7 +162,6 @@ def main():
                 doomsday -= 1
 
     doomsday %= 7
-    print(doomsday)
     ans = input(f"What day is {month} {day} {year}? ")
     if ans == weekdays[doomsday]:
         print("Good")
