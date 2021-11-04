@@ -21,11 +21,11 @@ def main():
 
     if month == "Februrary":
         if leapYear == True:
-            day -= 2
+            day = randint(1, 29)
         else:
-            day -= 3
+            day = randint(1, 28)
     elif month not in ["January", "March", "May", "July", "August", "October", "December"]:
-        day -= 1
+        day = randint(1, 30)
 
     lastDigits = year % 100
     a = lastDigits // 12
@@ -40,7 +40,6 @@ def main():
         d = 2
     elif year >= 2100 and year < 2199:
         d = 0
-        date = "is"
 
     doomsday = (a+b+c+d) % 7
 
@@ -166,7 +165,14 @@ def main():
     if ans == weekdays[doomsday]:
         print("Good")
     else:
-        print("Bad")
+        print("Wrong")
+        print(f"The day is {weekdays[doomsday]}")
+        print(a)
+        print(b)
+        print(c)
+        print(d)
+        print(a+b+c+d)
+        print((a+b+c+d)%7)
 
 if __name__ == "__main__":
     main()
